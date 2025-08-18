@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "ml"
+version = "0.1.0"
+description = "Machie Learning"
+authors = ["Oscar Andres Ochoa Villegas <ochoscar@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+torch = "^2.7.1"
+scikit-learn = "^1.7.1"
+pandas = "^2.3.1"
+matplotlib = "^3.10.5"
+jupyter = "^1.1.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
