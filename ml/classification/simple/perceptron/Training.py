@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 
-from ml.classification.simple.perceptron.Loader import loadIrisData
+from ml.classification.simple.Loader import loadIrisData
 from ml.classification.simple.perceptron.Perceptron import Perceptron
 
 def training_perceptron():
