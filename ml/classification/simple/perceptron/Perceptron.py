@@ -10,7 +10,7 @@ class Perceptron:
         rgen = np.random.RandomState(self.random_state)
         self.w = rgen.normal(loc=0.0, scale=0.01, size=x.shape[1])
         self.b = np.float64(0.)
-        self.errors_ = []
+        self.errors = []
         for _ in range(self.n_iter):
             errors = 0
             for xi, target in zip(x, y):
@@ -18,7 +18,7 @@ class Perceptron:
                 self.w += update * xi
                 self.b += update
                 errors += int(update != 0.0)
-            self.errors_.append(errors)
+            self.errors.append(errors)
         return self
 
     def net_input(self, x):

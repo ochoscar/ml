@@ -9,22 +9,22 @@ class AdelineGD:
 
     def fit(self, X, y):
         rgen = np.random.RandomState(self.random_state)
-        self.w_ + rgen.normal(loc=0.0, scale=0.01, size=X.shape[1])
-        self.b_ = np.float64(0.)
-        self.losses_ = []
+        self.w = rgen.normal(loc=0.0, scale=0.01, size=X.shape[1])
+        self.b = np.float64(0.)
+        self.errors = []
 
         for _ in range(self.n_iter):
             net_input = self.net_input(X)
             output = self.activation(net_input)
             errors = y - output
-            self.w_ += self.eta * 2.0 * X.T.dot(errors) / X.shape[0]
-            self.b_ += self.eta * 2.0 * errors.mean()
-            loss = (errors**2).mean()
-            self.losses_.append(loss)
+            self.w += self.eta * 2.0 * X.T.dot(errors) / X.shape[0]
+            self.b += self.eta * 2.0 * errors.mean()
+            error = (errors**2).mean()
+            self.errors.append(error)
         return self
 
     def net_input(self, X):
-        return np.dot(X, self.w_) + self.b_
+        return np.dot(X, self.w) + self.b
     
     def activation(self, X):
         return X

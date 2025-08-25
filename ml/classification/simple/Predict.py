@@ -2,7 +2,9 @@ import numpy as np
 from matplotlib import pyplot as plt
 from matplotlib.colors import ListedColormap
 
-from ml.classification.simple.perceptron.Training import training_perceptron
+from ml.classification.simple.Training import training
+from ml.classification.simple.adeline.Adeline import AdelineGD
+from ml.classification.simple.perceptron.Perceptron import Perceptron
 
 def plot_decision_regions(X, y, classifier, test_idx=None, resolution=0.02):
     markers = ('o', 's', '^', 'v', '<')
@@ -30,5 +32,6 @@ def plot_decision_regions(X, y, classifier, test_idx=None, resolution=0.02):
     plt.show()
         
 if __name__ == "__main__":
-    ppn, X, y = training_perceptron()
+    #ppn, X, y = training(Perceptron)
+    ppn, X, y = training(AdelineGD)
     plot_decision_regions(X, y, ppn)
