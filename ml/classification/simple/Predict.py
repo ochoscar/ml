@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 from matplotlib.colors import ListedColormap
 
 from ml.classification.simple.Training import training
-from ml.classification.simple.adeline.Adeline import AdelineGD
+from ml.classification.simple.adeline.Adeline import AdalineSGD, AdelineGD
 from ml.classification.simple.perceptron.Perceptron import Perceptron
 
 def plot_decision_regions(X, y, classifier, test_idx=None, resolution=0.02):
@@ -33,5 +33,6 @@ def plot_decision_regions(X, y, classifier, test_idx=None, resolution=0.02):
         
 if __name__ == "__main__":
     #ppn, X, y = training(Perceptron)
-    ppn, X, y = training(AdelineGD)
+    #ppn, X, y = training(AdelineGD)
+    ppn, X, y = training(AdalineSGD)
     plot_decision_regions(X, y, ppn)

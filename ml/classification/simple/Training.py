@@ -3,7 +3,7 @@ import pandas as pd
 from matplotlib import pyplot as plt
 
 from ml.classification.simple.Loader import loadIrisData
-from ml.classification.simple.adeline.Adeline import AdelineGD
+from ml.classification.simple.adeline.Adeline import AdalineSGD, AdelineGD
 from ml.classification.simple.perceptron.Perceptron import Perceptron
 
 def training(classifier):
@@ -22,4 +22,5 @@ def training(classifier):
 
 if __name__ == "__main__":
     #training(Perceptron)
-    training(AdelineGD)
+    #training(AdelineGD)
+    training(AdalineSGD)
